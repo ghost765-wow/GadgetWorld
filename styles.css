@@ -1,0 +1,345 @@
+/* Основные стили и сброс */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background-color: #0c0c0c; color: #f0f0f0; line-height: 1.6; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+/* Контейнеры */
+.container { width: 95%; max-width: 1800px; margin: 0 auto; padding: 0 15px; }
+
+/* Верхняя инфо-панель */
+.top-info-bar { background: #111; border-bottom: 1px solid #333; padding: 15px 0; }
+.top-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.logo { display: flex; align-items: center; font-size: 1.8rem; font-weight: bold; cursor: pointer; }
+.logo i { color: #c00; margin-right: 10px; font-size: 2rem; }
+.logo span { color: #fff; }
+.top-info-content { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+.top-info-item { display: flex; flex-direction: column; align-items: center; gap: 6px; color: #fff; font-size: 0.95rem; transition: all 0.3s; padding: 8px 12px; border-radius: 5px; cursor: pointer; min-width: 90px; }
+.top-info-item:hover { background: #222; transform: translateY(-2px); }
+.top-info-item i { color: #c00; font-size: 1.2rem; margin-bottom: 5px; }
+.phone-info { display: flex; align-items: center; gap: 6px; color: #fff; font-size: 0.95rem; }
+.phone-info i { color: #c00; }
+.phone-number { font-weight: bold; }
+
+/* Шапка с поиском */
+header { background: #111; border-bottom: 3px solid #c00; padding: 12px 0; position: sticky; top: 0; z-index: 1000; }
+.header-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.search-bar { flex-grow: 1; max-width: 650px; margin: 0 15px; position: relative; }
+.search-bar input { width: 100%; padding: 12px 22px; border-radius: 5px; border: 2px solid #333; font-size: 0.95rem; outline: none; background: #222; color: white; transition: all 0.3s; }
+.search-bar input:focus { border-color: #c00; box-shadow: 0 0 15px rgba(204, 0, 0, 0.5); }
+.search-bar button { position: absolute; right: 5px; top: 5px; background: #c00; border: none; color: white; padding: 7px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s; }
+.search-bar button:hover { background: #a00; }
+.contact-info { text-align: right; }
+.contact-info p { margin-bottom: 4px; font-size: 0.85rem; }
+.contact-info i { color: #c00; margin-right: 5px; }
+
+/* Слайдер и Меню */
+.slider { margin: 20px 0; border-radius: 10px; overflow: hidden; box-shadow: 0 0 30px rgba(0, 0, 0, 0.7); position: relative; border: 2px solid #333; }
+.slider img { width: 100%; height: 400px; object-fit: cover; display: block; }
+.main-menu { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; margin: 25px 0 35px; padding: 20px; background: #111; border-radius: 15px; border: 2px solid #333; }
+.main-menu-item { display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; padding: 20px 12px; border-radius: 12px; background: linear-gradient(145deg, #1a1a1a, #151515); border: 2px solid #444; transition: all 0.3s; min-height: 150px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); cursor: pointer; }
+.main-menu-item:hover { transform: translateY(-8px); border-color: #c00; background: linear-gradient(145deg, #222, #1a1a1a); box-shadow: 0 15px 30px rgba(204, 0, 0, 0.2); }
+.main-menu-item i { font-size: 2.5rem; color: #c00; margin-bottom: 12px; }
+.main-menu-item span { font-size: 1rem; font-weight: 600; text-align: center; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* Секция преимуществ */
+.advantages-section { margin: 50px 0; padding: 30px 0; background: #111; border-radius: 15px; border: 2px solid #333; }
+.section-title { text-align: center; margin-bottom: 35px; color: #fff; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; }
+.section-title i { color: #c00; margin-right: 15px; }
+.advantages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 0 15px; }
+.advantage-item { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 20px 15px; background: #1a1a1a; border-radius: 10px; border: 1px solid #333; transition: all 0.3s; }
+.advantage-item:hover { border-color: #c00; transform: translateY(-5px); }
+.advantage-item i { font-size: 2.5rem; color: #c00; margin-bottom: 15px; }
+.advantage-item h3 { margin-bottom: 10px; color: #fff; font-size: 1.3rem; }
+.advantage-item p { color: #aaa; font-size: 0.95rem; }
+
+/* Контент и Анимации */
+.main-content { display: none; animation: fadeIn 0.5s; }
+.main-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Страница категории */
+.category-page { min-height: 700px; }
+.page-title { margin: 30px 0 20px; color: #fff; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; }
+
+/* Панель фильтров и сортировки */
+.filters-sort-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+    margin: 20px 0 30px; 
+    align-items: flex-start;
+}
+
+.brand-filters { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px; 
+    flex: 1; 
+    padding: 12px 15px; 
+    background: #111; 
+    border-radius: 10px; 
+    border: 1px solid #333; 
+    min-width: 300px; 
+}
+
+.sort-filters { 
+    display: flex; 
+    flex-wrap: nowrap; 
+    gap: 8px; 
+    padding: 5px 10px; 
+    background: #111; 
+    border-radius: 10px; 
+    border: 1px solid #333;
+    min-width: auto;
+}
+
+.brand-filter { 
+    background: #222; 
+    color: white; 
+    border: 2px solid #333; 
+    padding: 6px 12px; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    font-weight: 600; 
+    transition: all 0.3s; 
+    font-size: 0.85rem; 
+    user-select: none; 
+}
+
+.sort-filter { 
+    background: #222; 
+    color: white; 
+    border: 2px solid #333; 
+    padding: 6px 10px; 
+    border-radius: 20px; 
+    cursor: pointer; 
+    font-weight: 600; 
+    transition: all 0.3s; 
+    font-size: 0.8rem; 
+    user-select: none;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.brand-filter:hover, .sort-filter:hover { background: #333; border-color: #c00; }
+.brand-filter.active, .sort-filter.active { background: #c00; border-color: #c00; color: white; }
+
+.sort-filter i {
+    font-size: 0.9rem;
+}
+
+/* Сетка товаров */
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-bottom: 50px; }
+.product-card { background: #111; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); transition: all 0.3s; border: 1px solid #333; cursor: pointer; display: flex; flex-direction: column; }
+.product-card:hover { transform: translateY(-10px); border-color: #c00; box-shadow: 0 15px 35px rgba(204, 0, 0, 0.2); }
+.product-img { height: 240px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #1a1a1a; padding: 10px; }
+.product-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.product-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+.product-category { color: #c00; font-size: 0.85rem; margin-bottom: 8px; font-weight: 500; text-transform: uppercase; }
+.product-name { font-weight: 600; margin-bottom: 12px; font-size: 1.1rem; line-height: 1.4; color: #fff; flex-grow: 1; }
+.product-price { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+.price { font-size: 1.5rem; font-weight: bold; color: #fff; }
+.price span { font-size: 1rem; color: #c00; }
+
+/* Страница товара (Детали) */
+.product-page { min-height: 800px; padding: 30px 0; }
+.back-btn { background: #222; color: #fff; border: 1px solid #333; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-bottom: 20px; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
+.back-btn:hover { background: #333; border-color: #c00; }
+.product-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; margin-top: 25px; background: #111; border-radius: 15px; padding: 35px; border: 2px solid #333; }
+.main-product-image { background: #1a1a1a; border-radius: 10px; padding: 25px; display: flex; align-items: center; justify-content: center; height: 450px; border: 2px solid #333; }
+.main-product-image img { max-width: 90%; max-height: 90%; object-fit: contain; }
+.product-detail-name { color: #fff; font-size: 2rem; margin-bottom: 18px; line-height: 1.3; }
+.product-detail-price { margin: 20px 0; padding: 18px 0; border-top: 2px solid #333; border-bottom: 2px solid #333; }
+.product-detail-price .price { font-size: 2.2rem; color: #fff; }
+.product-detail-actions { display: flex; gap: 15px; margin: 25px 0; }
+.order-btn { background: #c00; color: white; flex: 2; padding: 15px; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; border: none; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.order-btn:hover { background: #a00; transform: translateY(-3px); }
+.cart-btn { background: #222; color: white; flex: 1; border: 2px solid #333; padding: 15px; border-radius: 8px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1rem; font-weight: 600; }
+.cart-btn:hover { background: #333; border-color: #c00; }
+.product-description { margin-top: 25px; padding-top: 20px; border-top: 2px solid #333; }
+.product-description h3 { color: #c00; font-size: 1.3rem; margin-bottom: 12px; }
+.product-description p { color: #aaa; line-height: 1.7; }
+
+/* Страница оформления заказа */
+.order-page { min-height: 800px; padding: 30px 0; }
+.order-container { max-width: 1000px; margin: 0 auto; }
+.order-header { text-align: center; margin-bottom: 35px; }
+.order-content { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+.order-product-info, .order-form { background: #111; border-radius: 15px; padding: 25px; border: 2px solid #333; }
+.order-product-image { background: #1a1a1a; border-radius: 10px; padding: 20px; display: flex; align-items: center; justify-content: center; height: 280px; margin-bottom: 20px; border: 2px solid #333; }
+.order-product-image img { max-width: 85%; max-height: 85%; object-fit: contain; }
+.order-product-name { color: #fff; font-size: 1.3rem; margin-bottom: 12px; }
+.order-product-price { color: #c00; font-size: 1.8rem; font-weight: bold; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; color: #fff; font-size: 1rem; margin-bottom: 8px; }
+.form-group input, .form-group select { width: 100%; padding: 12px 16px; border-radius: 8px; border: 2px solid #333; background: #1a1a1a; color: white; font-size: 0.95rem; outline: none; transition: 0.3s; }
+.form-group input:focus, .form-group select:focus { border-color: #c00; box-shadow: 0 0 10px rgba(204, 0, 0, 0.3); }
+.submit-order-btn { width: 100%; padding: 16px; background: #c00; color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: 0.3s; }
+.submit-order-btn:hover { background: #a00; transform: translateY(-3px); }
+
+/* Подвал */
+footer { background: #111; color: white; padding: 40px 0 20px; margin-top: 50px; border-top: 3px solid #c00; }
+.footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 30px; }
+.footer-logo { font-size: 1.6rem; font-weight: bold; display: flex; align-items: center; }
+.footer-logo i { color: #c00; margin-right: 10px; font-size: 2rem; }
+.footer-contact p { margin-bottom: 8px; cursor: pointer; transition: color 0.3s; display: flex; align-items: center; gap: 8px; }
+.footer-contact p:hover { color: #c00; }
+.copyright { text-align: center; padding-top: 20px; border-top: 1px solid #333; color: #777; }
+.empty-result { grid-column: 1 / -1; text-align: center; padding: 40px; background: #111; border-radius: 10px; border: 2px solid #333; }
+
+/* Стили для Telegram уведомления */
+.telegram-notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #0088cc;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 10000;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: slideInRight 0.5s ease;
+    cursor: pointer;
+    max-width: 350px;
+}
+
+.telegram-notification i {
+    font-size: 24px;
+}
+
+.telegram-notification-content h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.telegram-notification-content p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.telegram-notification:hover {
+    background: #0077b5;
+    transform: translateY(-2px);
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Кнопка Telegram в подвале */
+.telegram-footer-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #0088cc;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+    margin-top: 15px;
+}
+
+.telegram-footer-btn:hover {
+    background: #0077b5;
+    transform: translateY(-2px);
+}
+
+/* Адаптив для планшетов */
+@media (max-width: 1100px) {
+    .header-top { flex-direction: column; gap: 15px; }
+    .search-bar { max-width: 100%; order: 2; margin: 12px 0; }
+    .contact-info { text-align: center; order: 3; }
+    .footer-content { flex-direction: column; text-align: center; gap: 25px; }
+    .product-detail, .order-content { grid-template-columns: 1fr; gap: 25px; }
+    .main-menu { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    .slider img { height: 350px; }
+    .page-title { font-size: 2rem; }
+    .product-detail, .order-container { padding: 25px; }
+    .main-product-image, .order-product-image { height: 350px; }
+    .product-detail-actions { flex-direction: column; }
+    .advantages-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .filters-sort-container { flex-direction: column; }
+    .brand-filters, .sort-filters { width: 100%; }
+    .sort-filters { flex-wrap: wrap; }
+}
+
+/* Адаптив для смартфонов */
+@media (max-width: 768px) {
+    .slider img { height: 250px; }
+    .page-title { font-size: 1.8rem; }
+    .product-detail, .order-container { padding: 20px; }
+    .main-product-image, .order-product-image { height: 300px; padding: 15px; }
+    .product-detail-name { font-size: 1.6rem; }
+    .product-detail-price .price { font-size: 1.8rem; }
+    .order-btn, .cart-btn { padding: 12px; font-size: 0.95rem; }
+    .top-header { flex-direction: column; gap: 15px; }
+    .top-info-content { justify-content: center; }
+    .top-info-item { min-width: 80px; padding: 6px 8px; }
+    .main-menu { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; padding: 15px; }
+    .main-menu-item { padding: 15px 8px; min-height: 120px; }
+    .main-menu-item i { font-size: 2rem; }
+    .main-menu-item span { font-size: 0.9rem; }
+    .products-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .product-img { height: 200px; }
+    .section-title { font-size: 1.8rem; }
+    .advantage-item { padding: 15px 10px; }
+    .advantage-item i { font-size: 2rem; }
+    .brand-filter, .sort-filter { padding: 5px 10px; font-size: 0.8rem; }
+    .sort-filter { font-size: 0.75rem; padding: 5px 8px; }
+    .telegram-notification {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        max-width: none;
+    }
+}
+
+/* Адаптив для маленьких телефонов */
+@media (max-width: 480px) {
+    .slider img { height: 180px; }
+    .page-title { font-size: 1.5rem; }
+    .product-detail-name { font-size: 1.3rem; }
+    .main-menu { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+    .main-menu-item { padding: 12px 5px; min-height: 100px; }
+    .main-menu-item i { font-size: 1.7rem; }
+    .main-menu-item span { font-size: 0.8rem; }
+    .products-grid { grid-template-columns: 1fr; }
+    .brand-filters, .sort-filters { gap: 6px; }
+    .brand-filter, .sort-filter { padding: 4px 8px; font-size: 0.75rem; }
+    .sort-filter { font-size: 0.7rem; padding: 4px 6px; }
+    .logo { font-size: 1.5rem; }
+    .logo i { font-size: 1.7rem; }
+    .footer-logo { font-size: 1.4rem; }
+    .footer-logo i { font-size: 1.8rem; }
+    .sort-filter span {
+        display: none;
+    }
+    .sort-filter i {
+        font-size: 0.8rem;
+    }
+}

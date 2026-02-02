@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ГаджетМир - Гипермаркет Электроники</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-info-bar">
+        <div class="container">
+            <div class="top-header">
+                <div class="logo" id="homeBtn">
+                    <i class="fas fa-laptop"></i>
+                    <span>ГаджетМир</span>
+                </div>
+                <div class="top-info-content">
+                    <div class="top-info-item"><i class="fas fa-truck"></i><span class="top-info-text">Доставка</span></div>
+                    <div class="top-info-item"><i class="fas fa-shield-alt"></i><span class="top-info-text">Гарантии</span></div>
+                    <div class="top-info-item"><i class="fas fa-hand-holding-usd"></i><span class="top-info-text">Оплата</span></div>
+                    <div class="phone-info"><i class="fas fa-phone-alt"></i><span class="phone-number">+375 (44) 570-05-00</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Поиск товаров по каталогу...">
+                    <button id="searchBtn"><i class="fas fa-search"></i> Найти</button>
+                </div>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> 8 (800) 555-35-35</p>
+                    <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="homePage" class="main-content active">
+            <div class="slider">
+                <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&auto=format&fit=crop&w=1800&q=80" alt="Техника">
+            </div>
+            <div class="main-menu" id="mainMenu"></div>
+            <div class="advantages-section">
+                <h2 class="section-title"><i class="fas fa-star"></i> Наши преимущества</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-item"><i class="fas fa-shipping-fast"></i><h3>Быстрая доставка</h3><p>Доставка за 1-2 дня по всей стране.</p></div>
+                    <div class="advantage-item"><i class="fas fa-shield-alt"></i><h3>Официальная гарантия</h3><p>Гарантия на всю технику от производителя.</p></div>
+                    <div class="advantage-item"><i class="fas fa-hand-holding-usd"></i><h3>Оплата при получении</h3><p>Оплачивайте после проверки товара.</p></div>
+                    <div class="advantage-item"><i class="fas fa-headset"></i><h3>Поддержка 24/7</h3><p>Круглосуточные консультации экспертов.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="categoryPage" class="main-content category-page">
+            <h1 class="page-title" id="categoryTitle"></h1>
+            <div class="filters-sort-container">
+                <div class="brand-filters" id="brandFilters"></div>
+                <div class="sort-filters" id="sortFilters"></div>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+
+        <div id="productPage" class="main-content product-page">
+            <button class="back-btn" id="backToCategoryBtn"><i class="fas fa-arrow-left"></i> Назад в каталог</button>
+            <div class="product-detail">
+                <div class="main-product-image"><img id="detailImage" src="" alt=""></div>
+                <div class="product-info">
+                    <div class="product-category" id="detailCat"></div>
+                    <h1 class="product-detail-name" id="detailName"></h1>
+                    <div class="product-detail-price"><span class="price" id="detailPrice"></span></div>
+                    <div class="product-description">
+                        <h3><i class="fas fa-info-circle"></i> Описание</h3>
+                        <p id="detailDesc"></p>
+                    </div>
+                    <div class="product-detail-actions">
+                        <button class="order-btn" id="goToOrderBtn"><i class="fas fa-shopping-cart"></i> Оформить заказ</button>
+                        <button class="cart-btn"><i class="fas fa-heart"></i> В избранное</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="orderPage" class="main-content order-page">
+            <button class="back-btn" id="backToProductBtn"><i class="fas fa-arrow-left"></i> Назад к товару</button>
+            <div class="order-header">
+                <h1>Оформление заказа</h1>
+                <p>Заполните форму, и мы свяжемся с вами в течение 15 минут</p>
+            </div>
+            <div class="order-content">
+                <div class="order-product-info">
+                    <div class="order-product-image"><img id="orderImg" src="" alt=""></div>
+                    <h2 class="order-product-name" id="orderName"></h2>
+                    <div class="order-product-price" id="orderPrice"></div>
+                </div>
+                <div class="order-form">
+                    <form id="orderForm">
+                        <div class="form-group"><label>Ваше имя</label><input type="text" id="customerName" placeholder="Иван Иванов" required></div>
+                        <div class="form-group"><label>Телефон</label><input type="tel" id="customerPhone" placeholder="+375 (XX) XXX-XX-XX" required></div>
+                        <div class="form-group"><label>Город доставки</label><input type="text" id="customerCity" placeholder="Минск" required></div>
+                        <div class="form-group">
+                            <label>Когда планируете покупку?</label>
+                            <select id="purchaseTiming" required>
+                                <option value="today">Сегодня</option>
+                                <option value="tomorrow">Завтра</option>
+                                <option value="week">В течение недели</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-order-btn"><i class="fas fa-check-circle"></i> Подтвердить заказ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><i class="fas fa-laptop"></i><span>ГаджетМир</span></div>
+                <div class="footer-contact">
+                    <p><i class="fas fa-truck"></i> Доставка по РБ</p>
+                    <p><i class="fas fa-shield-alt"></i> Гарантия качества</p>
+                    <p><i class="fas fa-clock"></i> Ежедневно 9:00 - 21:00</p>
+                    <a href="https://t.me/GadgetWorldBot" target="_blank" class="telegram-footer-btn">
+                        <i class="fab fa-telegram"></i> Наш Telegram бот
+                    </a>
+                </div>
+            </div>
+            <div class="copyright"><p>&copy; 2024 ГаджетМир. Интернет-магазин бытовой техники и электроники.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
